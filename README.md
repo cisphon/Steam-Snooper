@@ -12,5 +12,6 @@ Pick a user with a private friends list:
 
 
 ## Here's how to use it:
-
-Get a Steam Web API Key [here] (https://steamcommunity.com/dev) by filling out the form.
+Get a Steam Web API Key 
+[here] (https://steamcommunity.com/dev)
+by filling out the form.
