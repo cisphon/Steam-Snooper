@@ -4,8 +4,6 @@ This allows you to partially generate a friends list of a someone's private frie
 
 You can find the download [here](https://github.com/cisphon/Steam-Snooper/releases)
 
-[Microsoft .NET 4.5 or higher (needed to unzip the driver and for macros to work properly)](http://www.microsoft.com/en-us/download/details.aspx?id=42642)
-
 ## Here's a visual example of how it works:
 
 Pick a user with a private friends list:
