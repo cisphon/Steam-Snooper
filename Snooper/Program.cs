@@ -293,20 +293,14 @@ namespace Snoop
             }*/
         }
 
-        static async Task AnotherRun()
-        {
-            var WIF = new SteamWebInterfaceFactory("");
-            var SI = WIF.CreateSteamWebInterface<SteamUser>(new HttpClient());
-        }
-
         static async Task Main(string[] args)
         {
+
             //string ye = Directory.GetCurrentDirectory();
             //Console.WriteLine(ye);
             //await Run();
             RunGUI();
             //await TestsAsync();
-            //await AnotherRun();
         }
     }
 }

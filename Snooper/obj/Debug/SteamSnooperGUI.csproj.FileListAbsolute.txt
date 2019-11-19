@@ -7,7 +7,6 @@ C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Debug\Steam.Models.dll
 C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Debug\SteamWebAPI2.dll
 C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Debug\AutoMapper.xml
 C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Debug\SteamSnooperGUI.csprojAssemblyReference.cache
 C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Debug\Snooper.Form1.resources
 C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Debug\Snooper.Properties.Resources.resources
 C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Debug\SteamSnooperGUI.csproj.GenerateResource.cache

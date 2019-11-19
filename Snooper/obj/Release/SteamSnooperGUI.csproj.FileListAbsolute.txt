@@ -1,0 +1,17 @@
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Snooper.exe.config
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Snooper.exe
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Snooper.pdb
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\AutoMapper.dll
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Newtonsoft.Json.dll
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Steam.Models.dll
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\SteamWebAPI2.dll
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\AutoMapper.xml
+C:\Users\Jesse\source\repos\Snooper\Snooper\bin\Release\Newtonsoft.Json.xml
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\SteamSnooperGUI.csprojAssemblyReference.cache
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\Snooper.Form1.resources
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\Snooper.Properties.Resources.resources
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\SteamSnooperGUI.csproj.GenerateResource.cache
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\SteamSnooperGUI.csproj.CoreCompileInputs.cache
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\SteamSnooperGUI.csproj.CopyComplete
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\Snooper.exe
+C:\Users\Jesse\source\repos\Snooper\Snooper\obj\Release\Snooper.pdb
