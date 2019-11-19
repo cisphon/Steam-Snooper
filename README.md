@@ -10,14 +10,14 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 [Get a Steam Web API Key](https://steamcommunity.com/dev) by filling out the form.
 
 #### Get your custom url.
-[one](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_1.jpg)
+![one](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_1.jpg)
 
 #### Fetch your steamID64 from [here](https://steamidfinder.com/).
-[two](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_2.jpg)
-[three](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_3.jpg)
+![two](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_2.jpg)
+![three](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_3.jpg)
 
 #### Put your steamID64 into the program and submit the credentials.
-[four](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_4.jpg)
+![four](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_4.jpg)
 
 #### Submit the steamID64 of the person you want to snoop on and click search!
-[five](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_5.jpg)
+![five](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_5.jpg)
