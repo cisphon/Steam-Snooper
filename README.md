@@ -7,7 +7,7 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 ## Here's a visual example of how it works:
 
 * Pick a user with a private friends list:
-![one] (https://github.com/cisphon/Steam-Snooper/blob/master/images/visual_1.jpg "visual 1")
+![one](https://github.com/cisphon/Steam-Snooper/blob/master/images/visual_1.jpg)
 [[images/visual_2.jpg]]
 
 * Stumble upon a person with a public friends list:
@@ -20,4 +20,4 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 [[images/visual_5.jpg]]
 
 ## Here's how to use it:
-[Get a Steam Web API Key] (https://steamcommunity.com/dev) by filling out the form.
+[Get a Steam Web API Key](https://steamcommunity.com/dev) by filling out the form.
