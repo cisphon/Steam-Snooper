@@ -6,8 +6,11 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 
 ## Here's a visual example of how it works:
 
-Pick a user with a private friends list:
-[[images/private_friends_list.jpg]]
+..* Pick a user with a private friends list:
+[[images/visual_1.jpg]]
+
+[[images/visual_2.jpg]]
+
 
 
 
