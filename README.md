@@ -7,7 +7,7 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 ## Here's a visual example of how it works:
 
 * Pick a user with a private friends list:
-[one] (https://github.com/cisphon/Steam-Snooper/blob/master/images/visual_1.jpg)
+![one] (https://github.com/cisphon/Steam-Snooper/blob/master/images/visual_1.jpg "visual 1")
 [[images/visual_2.jpg]]
 
 * Stumble upon a person with a public friends list:
