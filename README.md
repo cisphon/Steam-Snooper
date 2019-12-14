@@ -22,4 +22,4 @@ You can find the download [here](https://github.com/cisphon/Steam-Snooper/releas
 #### Submit the steamID64 of the person you want to snoop on and click search!
 ![five](https://github.com/cisphon/Steam-Snooper/blob/master/images/how_5.jpg)
 
-#### After you click search, the big textbox to the right will slowly start find users. Be patient and let it run a few hours.
+# After you click search, the big textbox to the right will slowly start find users. Be patient and let it run a few hours.
