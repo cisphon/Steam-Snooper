@@ -148,7 +148,7 @@ namespace Snoop
 
         public string getFriendsOfPersonToSearch()
         {
-            StringBuilder sb = new StringBuilder("" + privateFriends.Count + "\n", 17);
+            StringBuilder sb = new StringBuilder("", 17);
 
             if (privateFriends.Count != 0)
             {
@@ -229,7 +229,10 @@ namespace Snoop
             {
                 // 49 is the length of the image filename.
                 string image_filename = uri.Substring(uri.Length - 49);
-                webClient.DownloadFile(uri, "" + steamID64 + ".png");
+
+                if (!Directory.Exists(Environment.CurrentDirectory + @"\saved_pictures\"))
+                    Directory.CreateDirectory(Environment.CurrentDirectory + @"\saved_pictures\");
+                webClient.DownloadFile(uri, Environment.CurrentDirectory + @"\saved_pictures\" + steamID64 + ".png");
             }
         }
 

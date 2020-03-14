@@ -173,16 +173,16 @@ namespace Snooper
         private void DisplayFriends()
         {
 
-            string[] friends = program.getFriendsOfPersonToSearch().Split('\n');
+            string[] friends = program.getFriendsOfPersonToSearch().Split('\n'); // ignore the last one!
 
             int friendsInBox = listBox1.Items.Count;
 
             if (friends.Length > friendsInBox)
             {
-                for (int i = friendsInBox; i < friends.Length; ++i)
+                for (int i = friendsInBox; i < friends.Length - 1; ++i) // ignored the last one
                 {
                     // 10 so I don't have weird outputs like spaces
-                    if (friends[i].Length > 10)
+                    //if (friends[i].Length > 10)
                         listBox1.Items.Add(friends[i]);
                 }
             }   
@@ -260,16 +260,13 @@ namespace Snooper
                 string uri = playerSummaryData.AbsoluteUri;
 
                 // if file does not exist 
-                if (!File.Exists(Environment.CurrentDirectory + "\\" + num + ".png"))
+                if (!File.Exists(Environment.CurrentDirectory + @"\saved_pictures\" + num + ".png"))
                     program.SaveImage(uri, num); //download the image
-                pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\" + num + ".png";
-                Console.WriteLine(Environment.CurrentDirectory);
-
+                pictureBox1.ImageLocation = Environment.CurrentDirectory + @"\saved_pictures\" + num + ".png";
 
                 textBox5.Text = "" + playerSummaryResponse.SteamID; // sets the steamID64 
                 textBox6.Text = "" + playerSummaryResponse.CustomURL; // sets the CustomURL
                 textBox7.Text = "" + playerSummaryResponse.RealName; // uhhh
-
 
             }
         }
