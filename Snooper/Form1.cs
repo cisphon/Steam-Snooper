@@ -120,11 +120,6 @@ namespace Snooper
             Properties.Settings.Default.Save(); // important line.
         }
 
-        private void RichTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void SubmitCredentials_Click(object sender, EventArgs e)
         {
             if (checkBox1.Checked) // if the checkbox is checked, save the creds. 
@@ -177,11 +172,20 @@ namespace Snooper
 
         private void DisplayFriends()
         {
-            if (program != null)
+
+            string[] friends = program.getFriendsOfPersonToSearch().Split('\n');
+
+            int friendsInBox = listBox1.Items.Count;
+
+            if (friends.Length > friendsInBox)
             {
-                this.richTextBox1.Clear();
-                this.richTextBox1.AppendText(program.getFriendsOfPersonToSearch());
-            }
+                for (int i = friendsInBox; i < friends.Length; ++i)
+                {
+                    // 10 so I don't have weird outputs like spaces
+                    if (friends[i].Length > 10)
+                        listBox1.Items.Add(friends[i]);
+                }
+            }   
         }
 
         private async void TextBox4_TextChangedAsync(object sender, EventArgs e)
@@ -231,6 +235,58 @@ namespace Snooper
         {
             Save_Friends();
             DisplayFriends();
+        }
+
+        private async void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button3_Click_1(object sender, EventArgs e)
+        {
+            ulong num = Convert.ToUInt64(listBox1.SelectedItem.ToString()); // converts the selected number to a long
+
+            // 5000 because no one can have 5000 friends.
+            // also, the first number in the listBox is the number of friends.
+            if (num > 5000)
+            {
+                var playerSummaryResponse = await program.steamInterface.GetCommunityProfileAsync(num);
+                var playerSummaryData = playerSummaryResponse.AvatarFull;
+                string uri = playerSummaryData.AbsoluteUri;
+
+                // if file does not exist 
+                if (!File.Exists(Environment.CurrentDirectory + "\\" + num + ".png"))
+                    program.SaveImage(uri, num); //download the image
+                pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\" + num + ".png";
+                Console.WriteLine(Environment.CurrentDirectory);
+
+
+                textBox5.Text = "" + playerSummaryResponse.SteamID; // sets the steamID64 
+                textBox6.Text = "" + playerSummaryResponse.CustomURL; // sets the CustomURL
+                textBox7.Text = "" + playerSummaryResponse.RealName; // uhhh
+
+
+            }
+        }
+
+        private void textBox5_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

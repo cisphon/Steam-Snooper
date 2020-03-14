@@ -136,6 +136,16 @@ namespace Snoop
             }
         }
 
+        public string getCustomURL(ulong steamID64)
+        {
+            return "" + steamInterface.GetCommunityProfileAsync(steamID64).Result.CustomURL;
+        }
+
+        public string getName(ulong steamID64)
+        {
+            return "" + steamInterface.GetCommunityProfileAsync(steamID64).Result.SteamID;
+        }
+
         public string getFriendsOfPersonToSearch()
         {
             StringBuilder sb = new StringBuilder("" + privateFriends.Count + "\n", 17);
@@ -196,26 +206,6 @@ namespace Snoop
             }
         }
 
-        public async Task DownloadAvatarsOfFriends(ulong steamID64)
-        {
-            mappedFriends.TryGetValue(steamID64, out HashSet<ulong> friends);
-
-            foreach (ulong friend in friends)
-            {
-                try
-                {
-                    var playerSummaryResponse = await steamInterface.GetCommunityProfileAsync(friend);
-                    var playerSummaryData = playerSummaryResponse.AvatarFull;
-                    string uri = playerSummaryData.AbsoluteUri;
-                    SaveImage(uri);
-                }
-                catch (System.ArgumentException ex)
-                {
-                    return;
-                }
-            }
-        }
-
         async Task PrintPrivateFriends(ulong steamID64)
         {
             mappedFriends.TryGetValue(steamID64, out HashSet<ulong> friends);
@@ -233,13 +223,13 @@ namespace Snoop
             }
         }
 
-        public static void SaveImage(string uri) // saves it to the debug folder.
+        public void SaveImage(string uri, ulong steamID64) // saves it to the debug folder.
         {
             using (WebClient webClient = new WebClient())
             {
                 // 49 is the length of the image filename.
                 string image_filename = uri.Substring(uri.Length - 49);
-                webClient.DownloadFile(uri, image_filename);
+                webClient.DownloadFile(uri, "" + steamID64 + ".png");
             }
         }
 
@@ -266,13 +256,6 @@ namespace Snoop
             Console.WriteLine(stopwatch.ElapsedMilliseconds + "milliseconds");
         }
 
-        static void RunGUI()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
-
         static async Task TestsAsync()
         {
             /*
@@ -293,6 +276,12 @@ namespace Snoop
             }*/
         }
 
+        static void RunGUI()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+        }
         static async Task Main(string[] args)
         {
 
