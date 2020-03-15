@@ -1,6 +1,7 @@
 ﻿using Snoop;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -249,6 +250,49 @@ namespace Snooper
 
         private async void button3_Click_1(object sender, EventArgs e)
         {
+            
+        }
+
+        private void textBox5_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.Clear();
+            if (this.textBox2 != null)
+            {
+                ulong client = Convert.ToUInt64(textBox2.Text.ToString());
+                List<ulong> privateFriends = await program.GetListOfPrivateFriendsAsync(client);
+                
+                if (privateFriends != null)
+                {
+                    foreach (ulong friend in privateFriends)
+                    {
+                        listBox2.Items.Add(friend);
+                    }
+                }
+            }
+        }
+
+        private async void button5_Click(object sender, EventArgs e)
+        {
             ulong num = Convert.ToUInt64(listBox1.SelectedItem.ToString()); // converts the selected number to a long
 
             // 5000 because no one can have 5000 friends.
@@ -271,19 +315,28 @@ namespace Snooper
             }
         }
 
-        private void textBox5_TextChanged_1(object sender, EventArgs e)
+        private async void button8_Click(object sender, EventArgs e)
         {
+            ulong num = Convert.ToUInt64(listBox2.SelectedItem.ToString()); // converts the selected number to a long
 
-        }
+            // 5000 because no one can have 5000 friends.
+            // also, the first number in the listBox is the number of friends.
+            if (num > 5000)
+            {
+                var playerSummaryResponse = await program.steamInterface.GetCommunityProfileAsync(num);
+                var playerSummaryData = playerSummaryResponse.AvatarFull;
+                string uri = playerSummaryData.AbsoluteUri;
 
-        private void label7_Click(object sender, EventArgs e)
-        {
+                // if file does not exist 
+                if (!File.Exists(Environment.CurrentDirectory + @"\saved_pictures\" + num + ".png"))
+                    program.SaveImage(uri, num); //download the image
+                pictureBox1.ImageLocation = Environment.CurrentDirectory + @"\saved_pictures\" + num + ".png";
 
-        }
+                textBox5.Text = "" + playerSummaryResponse.SteamID; // sets the steamID64 
+                textBox6.Text = "" + playerSummaryResponse.CustomURL; // sets the CustomURL
+                textBox7.Text = "" + playerSummaryResponse.RealName; // uhhh
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
