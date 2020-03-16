@@ -106,6 +106,35 @@ namespace Snoop
                 uncheckedUsers.Remove(steamId); // remove it from unchecked.
         }
 
+        public async Task<HashSet<ulong>> GetClientFriendsWithPrivateFriendsListAsync(ulong client)
+        {
+            if (mappedFriends[client] != null)
+            {
+                var friendsOfClient = mappedFriends[client];
+
+                HashSet<ulong> privateFriendsOfClient = new HashSet<ulong>();
+
+                foreach (var friend in friendsOfClient) // for each friend
+                {
+                    ISteamWebResponse<IReadOnlyCollection<FriendModel>> friendsListResponse;
+
+                    try
+                    {
+                        friendsListResponse = await steamInterface.GetFriendsListAsync(friend);
+                    }
+                    catch (System.Net.Http.HttpRequestException ex) // friends list is private
+                    {
+                        privateFriendsOfClient.Add(friend);
+
+                    }
+                }
+
+                return privateFriendsOfClient;
+            }
+
+            return null;
+        }
+
         public async Task OpenFriendsOfUncheckedUsersAsync()
         {
             var steamIDs = new HashSet<ulong>(uncheckedUsers); // Isolates the uncheckedUsers.
@@ -176,8 +205,6 @@ namespace Snoop
             }
         }
 
-
-
         public async Task LoadSavedFriendsAsync()
         {
             string path = Environment.CurrentDirectory + @"\saved_friends\" + steamIDToSearch + "_friends.txt"; // change this line 
@@ -236,31 +263,6 @@ namespace Snoop
                     Directory.CreateDirectory(Environment.CurrentDirectory + @"\saved_pictures\");
                 webClient.DownloadFile(uri, Environment.CurrentDirectory + @"\saved_pictures\" + steamID64 + ".png");
             }
-        }
-
-        public async Task<List<ulong>> GetListOfPrivateFriendsAsync(ulong client)
-        {
-            ISteamWebResponse<IReadOnlyCollection<FriendModel>> friendsListResponse;
-            try
-            {
-                friendsListResponse = await steamInterface.GetFriendsListAsync(client);
-                var friendsList = friendsListResponse.Data;
-                var arrayFriendsList = friendsList.ToArray();
-
-                List<ulong> friends = new List<ulong>();
-                foreach (var item in arrayFriendsList)
-                {
-                    ulong friendSteamId = Convert.ToUInt64(item.SteamId.ToString());
-                    friends.Add(friendSteamId);
-                }
-                return friends;
-            }
-            catch (System.Net.Http.HttpRequestException ex)
-            {
-
-            }
-
-            return null; // return nothing
         }
 
         static async Task Run()
