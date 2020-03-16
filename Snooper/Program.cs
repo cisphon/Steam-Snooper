@@ -207,7 +207,7 @@ namespace Snoop
 
         public async Task LoadSavedFriendsAsync()
         {
-            string path = Environment.CurrentDirectory + @"\saved_friends\" + steamIDToSearch + "_friends.txt"; // change this line 
+            string path = Environment.CurrentDirectory + @"\saved_friends\" + steamIDToSearch + ".txt"; // change this line 
             if (File.Exists(path))
             {
                 // Open the file to read from.

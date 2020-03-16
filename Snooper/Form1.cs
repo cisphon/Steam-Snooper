@@ -148,7 +148,6 @@ namespace Snooper
                 string steamWebApi = this.textBox1.Text;
                 ulong privatePerson = Convert.ToUInt64(this.textBox3.Text);
 
-
                 this.program = new SteamSnooper(steamWebApi, privatePerson); // create a new steamsnooper!
 
                 ulong prey = Convert.ToUInt64(this.textBox3.Text);
